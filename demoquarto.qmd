@@ -1,0 +1,22 @@
+---
+title: "Penguin Demo"
+author: "Cooper Maberry (cm72857)"
+format: html
+editor: visual
+---
+
+## Average Bill Length of Each Species 
+
+```{r}
+penguinsdt |>
+  drop_na(bill_length_mm) |>
+  group_by(species) |>
+  summarize(meanlength = mean(bill_length_mm))
+```
+
+```{r}
+ggplot(
+  penguinsdt, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point() 
+
+```
